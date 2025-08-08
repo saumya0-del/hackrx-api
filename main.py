@@ -139,3 +139,8 @@ def run_hackrx(req: HackRxRequest):
     llm = _load_llm()
     answers = _answer_batch(retriever, llm, req.questions)
     return {"answers": answers}
+
+if __name__ == "__main__":
+    import uvicorn, os
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
