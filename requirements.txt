@@ -1,11 +1,19 @@
-fastapi
-uvicorn
-langchain
-langchain-community
-langchain-huggingface
-transformers
-sentence-transformers
-faiss-cpu
-pypdf
-requests
-docx2txt
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+pydantic==2.8.2
+
+langchain==0.2.11
+langchain-community==0.2.10
+transformers==4.44.2
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0.post1
+
+pypdf==4.2.0
+requests==2.32.3
+docx2txt==0.9
+accelerate==0.33.0
+
+# Use CPU-only PyTorch wheel (MUCH smaller)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.3.1
+
