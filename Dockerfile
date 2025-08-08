@@ -23,5 +23,6 @@ RUN python -m pip install --upgrade pip \
 COPY . .
 
 # Railway provides $PORT; default 8000 for local
+# Railway provides PORT; default to 8000 for local
 EXPOSE 8000
-CMD ["bash","-lc","uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD exec uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
